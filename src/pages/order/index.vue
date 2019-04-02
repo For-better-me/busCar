@@ -12,7 +12,7 @@
 	export default Vue.extend({
 		data() {
 			return {
-				title: 'Hello'
+				title: 'Hello--order'
 			}
 		},
 		onLoad() {
@@ -24,6 +24,7 @@
 	});
 </script>
 
-<style lang = 'less'>
-    @import url('./style.less');
+<style scoped lang = 'less'>
+    @import url("./style");
+    
 </style>
