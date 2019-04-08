@@ -1,18 +1,27 @@
-interface routeInfo{
+interface RouteInfo{
     name:string,
     path:string,
     requiresAuth:boolean
 }
-class Router{
+export class Router{
     constructor(){
         
     }
-    beforeEach(){
+    beforeEach(navType:string,to:RouteInfo){
         return new Promise((resolve,reject)=>{
             resolve()
         })
     }
-    push(to:routeInfo):void{
-        this.callBack('navigateTo',to)
+    push(to:RouteInfo):void{
+        this.beforeEach('navigateTo',to)
+    }
+    redirectTo(to:RouteInfo):void{
+        this.beforeEach('redirectTo',to)
+    }
+    reLanch(to:RouteInfo):void{
+        this.beforeEach('reLanch',to)
+    }
+    switchTab(to:RouteInfo):void{
+        this.beforeEach('switchTab',to)
     }
 }
